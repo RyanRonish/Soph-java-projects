@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=Shape
-comment0.text=\n\ \ \ Ryan\ Ronish\ \ Homework\ Assignment\ 2\ \ \ \ \ \ \ \ \ *\ \n\ \ \ 11/03/23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\n
+comment0.text=\n\ \ \ Ryan\ Ronish\ \ Homework\ Assignment\ 3\ \ \ \ \ \ \ \ \ *\ \n\ \ \ 11/03/23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\n
 comment1.params=
-comment1.target=Shape()
-comment2.params=weight
-comment2.target=Shape(double)
-comment3.params=weight
-comment3.target=void\ setWeight(double)
-comment4.params=
-comment4.target=double\ getWeight()
-numComments=5
+comment1.target=void\ displayDimensions()
+comment2.params=
+comment2.target=void\ displayVolumeDensity()
+comment3.params=
+comment3.target=void\ displayContainer()
+numComments=4

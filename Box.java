@@ -1,108 +1,68 @@
 /***********************************************
-*   Ryan Ronish  Homework Assignment 2         * 
+*   Ryan Ronish  Homework Assignment 3         * 
 *   11/03/23                                   *
 *                                              *
 ***********************************************/
-public class Box extends Shape
-{
-    // instance variables lwh
+import java.lang.Math;
+
+class Box implements Shape {
     private double length;
     private double width;
     private double height;
-    
-    //Constructor one - has no parameters and initializees the Box's instance variables to 0.0
-    public Box()
-    {
-        // initialise instance variables
-        this.length = 0.0;
-        this.width = 0.0;
-        this.height = 0.0;
-    }
-    //Constructor two four double parameters that initializes the Box object's length, width, height, and weight
-    public Box(double length, double width, double height, double weight)
-    {
+    private double weight;
+
+    // Constructor for initializing a Box object with given dimensions and weight
+    public Box(double length, double width, double height, double weight) {
         this.length = length;
         this.width = width;
         this.height = height;
         this.weight = weight;
     }
-    //accepts a double and returns nothing
-    public void setLength(double length)
-    {
-        this.length = length;
-    }
-    //no aurguement and returns the length value as a double
-    public double getLength()
-    {
-        return length;
-    }
-    //accepts a double and returns nothing
-    public void setWidth(double width)
-    {
-        this.width = width;
-    }
-    //no arguements and returns the width value as a double
-    public double getWidth()
-    {
-        return width;
-    }
-    //accepts a double and returns nothing
-    public void setHeight(double height)
-    {
-        this.height = height;
-    }
-    // no arguements and returns the height value as a double
-    public double getHeight()
-    {
-        return height;
-    }
-    // no args, returns boolean
-    public boolean isACube()
-    {
-        return length == width && width == height;
-    }
-    // no args, returns boolean
-    // 2/3 have to have the same value
-    public boolean hasASquare()
-    {
-        return length == width || width == height || height == length;
-    }
-    // no args, returns volume
-    // formula = length * width *height
-    public double calculateVolume(){
-        return length * width * height;
-    }
-    //no args, returns density
-    //formula = weight/volume
-    public double calculateDensity() {
-        double volume = calculateVolume();
-        
-        if (volume == 0) {
-            return 0.0; // Return a default value or handle the error appropriately.
-        }
-        
-        return weight / volume;
+
+    // Display the dimensions and weight of the Box
+    public void displayDimensions() {
+        System.out.println("A Box of length " + length + ", width " + width + 
+        ", height " + height + ", and weight " + weight + " lb. was created.");
     }
     
-    // Returns a boolean true if the density is >= 10.00lbs
-    public boolean isHeavy() {
-        try {
-            double density = calculateDensity();
-            return density >= 10.0;
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage()); // Handle the exception message here if needed.
-            return false; // Return an appropriate default value.
-        }
+    // Calculate and return the volume of the Box
+    public double calculateVolume(double height, double length, double width){
+        double volume = length * width * height;
+        return volume;
     }
     
-    // No args, returns a boolean true if the density is <= 0.10lbs/cu ft
-    public boolean isLightWeight() {
-        try {
-            double density = calculateDensity();
-            return density <= 0.10;
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage()); // Handle the exception message here if needed.
-            return false; // Return an appropriate default value.
-        }
+    // Calculate and return the density of the Box based on its weight and volume
+    public double calculateDensity(double weight){
+        double volume = calculateVolume(height, length, width);
+        double density = weight / volume;
+        return density;
+    }
+    
+    // Display the volume and density of the Box, rounded to two decimal places
+    public void displayVolumeDensity(){
+        System.out.printf("Box volume: %.2f cu ft.        Box density: %.2f lbs./cu ft%n", calculateVolume(height, length, width), calculateDensity(weight));
+    }
+    
+    // Calculate and return the minimum volume that a container for the Box should have
+    public double calculateBestFit(double length, double width, double height){
+        double minVolume = length * width * height;
+        return minVolume;
+    }
+    
+    // Calculate and return the waste percentage when the Box is placed in a container
+    public double calculateWaste(){
+        double volume = calculateVolume(height, length, width);
+        double containerVolume = calculateBestFit(length, width, height);
+        double waste = (containerVolume - volume) / containerVolume;
+        return waste;
+    }
+    
+    // Display the container information, including the minimum container volume and waste percentage
+    public void displayContainer(){
+        System.out.printf("%.2f cu ft for a Box (%.2f%% waste)%n", calculateBestFit(length, width, height), calculateWaste() * 100);
     }
 }
+
+
+
+

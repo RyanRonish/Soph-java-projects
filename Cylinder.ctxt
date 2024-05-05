@@ -1,17 +1,17 @@
 #BlueJ class context
-comment0.target=Box
-comment1.params=length\ width\ height\ weight
-comment1.target=Box(double,\ double,\ double,\ double)
+comment0.target=Cylinder
+comment1.params=height\ diameter\ weight
+comment1.target=Cylinder(double,\ double,\ double)
 comment2.params=
 comment2.target=void\ displayDimensions()
-comment3.params=height\ length\ width
-comment3.target=double\ calculateVolume(double,\ double,\ double)
+comment3.params=height\ diameter
+comment3.target=double\ calculateVolume(double,\ double)
 comment4.params=weight
 comment4.target=double\ calculateDensity(double)
 comment5.params=
 comment5.target=void\ displayVolumeDensity()
-comment6.params=length\ width\ height
-comment6.target=double\ calculateBestFit(double,\ double,\ double)
+comment6.params=diameter\ height
+comment6.target=double\ calculateBestFit(double,\ double)
 comment7.params=
 comment7.target=double\ calculateWaste()
 comment8.params=
